@@ -33,7 +33,7 @@ namespace BD2_2024
             else if (String.IsNullOrEmpty(txtSenha))
             {
                 showMessageBox("Preencha todos os campos.");
-            }
+            } 
             else
             {
                 this.Hide();
