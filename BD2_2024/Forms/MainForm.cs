@@ -26,24 +26,24 @@ namespace BD2_2024.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            using (var connection = DatabasePostgresConnection.GetInstance().GetConnection())
-            {
-                using (var command = new NpgsqlCommand("SELECT version()", connection))
-                {
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            showMessageBox(reader.GetString(0));
-                        }
-                    }
-                }
-            }
+            bool hasInsertPermission = DatabasePostgresConnection.GetInstance().HasInsertPermissionOnVendas();
+            bool hasInsertPermissionVerFuncionarios = DatabasePostgresConnection.GetInstance().HasSelectPermissionOnFuncionarios();
+
+            BtnNovaVenda.Enabled = hasInsertPermission;
+            BtnFuncionario.Enabled = hasInsertPermissionVerFuncionarios;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void btnVerPermissoes_Click(object sender, EventArgs e)
+        {
+            Form mainForm = new VerPemissoesForm();
+            mainForm.Show();
+        }
+
+        private void BtnFuncionario_Click(object sender, EventArgs e)
+        {
+            Form mainForm = new VerFuncionariosForm();
+            mainForm.Show();
         }
     }
 }

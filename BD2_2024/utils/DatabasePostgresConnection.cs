@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Npgsql;
 
 namespace PostgresConnectionExample
@@ -49,5 +50,57 @@ namespace PostgresConnectionExample
                 _connection.Close();
             }
         }
+
+        public List<string> GetNativeUserPermissions()
+        {
+            var permissions = new List<string>();
+
+            string query = @"
+                SELECT
+                    grantee,
+                    table_catalog,
+                    table_schema,
+                    table_name,
+                    privilege_type
+                FROM
+                    information_schema.role_table_grants
+                WHERE
+                    grantee = CURRENT_USER;";
+
+            using (var command = new NpgsqlCommand(query, _connection))
+            {
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string permission = $"{reader.GetString(0)}:{reader.GetString(1)}.{reader.GetString(2)}.{reader.GetString(3)} - {reader.GetString(4)}";
+                        permissions.Add(permission);
+                    }
+                }
+            }
+
+            return permissions;
+        }
+
+        public bool HasInsertPermissionOnVendas()
+        {
+            string query = "SELECT has_table_privilege(CURRENT_USER, 'tb_vendas', 'INSERT');";
+
+            using (var command = new NpgsqlCommand(query, _connection))
+            {
+                return (bool)command.ExecuteScalar();
+            }
+        }
+
+        public bool HasSelectPermissionOnFuncionarios()
+        {
+            string query = "SELECT has_table_privilege(CURRENT_USER, 'tb_funcionarios', 'SELECT');";
+
+            using (var command = new NpgsqlCommand(query, _connection))
+            {
+                return (bool)command.ExecuteScalar();
+            }
+        }
+
     }
 }

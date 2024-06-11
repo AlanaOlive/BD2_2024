@@ -53,3 +53,5 @@ C:\Projetos\BD2_2024\BD2_2024\obj\Debug\BD2_2024.csproj.CoreCompileInputs.cache
 C:\Projetos\BD2_2024\BD2_2024\obj\Debug\BD2_2024.csproj.Up2Date
 C:\Projetos\BD2_2024\BD2_2024\obj\Debug\BD2_2024.exe
 C:\Projetos\BD2_2024\BD2_2024\obj\Debug\BD2_2024.pdb
+C:\Projetos\BD2_2024\BD2_2024\obj\Debug\BD2_2024.Forms.VerPemissoesForm.resources
+C:\Projetos\BD2_2024\BD2_2024\obj\Debug\BD2_2024.Forms.VerFuncionariosForm.resources
