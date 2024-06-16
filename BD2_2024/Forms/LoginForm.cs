@@ -28,6 +28,7 @@ namespace BD2_2024
         {
             var txtUsuario = txtBoxLoginUsuario.Text;
             var txtSenha = txtBoxLoginSenha.Text;
+            int port = 3307;
 
             if (String.IsNullOrEmpty(txtUsuario))
             {
@@ -41,7 +42,7 @@ namespace BD2_2024
             {
                 try
                 {
-                    var connectionString = $"Host=127.0.0.1;Username={txtUsuario};Password={txtSenha};Database=mySales";
+                    var connectionString = $"Host=127.0.0.1;Port={port};Username={txtUsuario};Password={txtSenha};Database=mySales";
                     var database = DatabasePostgresConnection.GetInstance(connectionString);
                     
                     this.Hide();
@@ -58,8 +59,6 @@ namespace BD2_2024
             }
 
         }
-
-     
 
     }
  
