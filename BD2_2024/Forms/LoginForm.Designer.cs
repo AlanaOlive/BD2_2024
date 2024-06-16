@@ -47,11 +47,11 @@ namespace BD2_2024
             this.txtBoxLoginUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxLoginUsuario.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxLoginUsuario.Location = new System.Drawing.Point(77, 127);
-            this.txtBoxLoginUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxLoginUsuario.Margin = new System.Windows.Forms.Padding(5);
             this.txtBoxLoginUsuario.MaxLength = 15;
             this.txtBoxLoginUsuario.MinimumSize = new System.Drawing.Size(0, 20);
             this.txtBoxLoginUsuario.Name = "txtBoxLoginUsuario";
-            this.txtBoxLoginUsuario.Size = new System.Drawing.Size(265, 20);
+            this.txtBoxLoginUsuario.Size = new System.Drawing.Size(265, 17);
             this.txtBoxLoginUsuario.TabIndex = 0;
             // 
             // txtBoxLoginSenha
@@ -62,12 +62,12 @@ namespace BD2_2024
             this.txtBoxLoginSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxLoginSenha.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxLoginSenha.Location = new System.Drawing.Point(77, 175);
-            this.txtBoxLoginSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxLoginSenha.Margin = new System.Windows.Forms.Padding(5);
             this.txtBoxLoginSenha.MaxLength = 15;
             this.txtBoxLoginSenha.MinimumSize = new System.Drawing.Size(0, 20);
             this.txtBoxLoginSenha.Name = "txtBoxLoginSenha";
             this.txtBoxLoginSenha.PasswordChar = '*';
-            this.txtBoxLoginSenha.Size = new System.Drawing.Size(265, 20);
+            this.txtBoxLoginSenha.Size = new System.Drawing.Size(265, 17);
             this.txtBoxLoginSenha.TabIndex = 1;
             // 
             // btnLogin
